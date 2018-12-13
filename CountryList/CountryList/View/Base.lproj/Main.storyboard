@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E0L-uK-6eF">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Countries-->
+        <scene sceneID="S55-qA-AdO">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Dn-XC-vmn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="VCI-I0-llC" customClass="CountryResultTableViewController" customModule="CountryList" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rTC-DU-l7z" customClass="Count">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <connections>
+                            <outlet property="dataSource" destination="VCI-I0-llC" id="S8Q-xr-QQp"/>
+                            <outlet property="delegate" destination="VCI-I0-llC" id="ye5-YE-iqg"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Countries" id="MU2-PU-Rt7"/>
+                    <connections>
+                        <segue destination="Z3s-pz-TB9" kind="show" id="UU0-Eq-f9A"/>
+                    </connections>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="849" y="-64"/>
+        </scene>
+        <!--Country Detail View Controller-->
+        <scene sceneID="QdH-NH-E6q">
+            <objects>
+                <viewController id="Z3s-pz-TB9" customClass="CountryDetailViewController" customModule="CountryList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IfR-GQ-oQN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ghb-fh-Eg5">
+                                <rect key="frame" x="0.0" y="64" width="375" height="240"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Country" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKK-Pb-Upp">
+                                <rect key="frame" x="10" y="333" width="71.5" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aKK-Pb-Upp" firstAttribute="leading" secondItem="1CG-v1-gp1" secondAttribute="leading" constant="10" id="CoX-fB-6sR"/>
+                            <constraint firstItem="ghb-fh-Eg5" firstAttribute="top" secondItem="1CG-v1-gp1" secondAttribute="top" id="cbU-Ju-Ylo"/>
+                            <constraint firstItem="ghb-fh-Eg5" firstAttribute="leading" secondItem="1CG-v1-gp1" secondAttribute="leading" id="pMf-Ge-Zxc"/>
+                            <constraint firstItem="aKK-Pb-Upp" firstAttribute="top" secondItem="ghb-fh-Eg5" secondAttribute="bottom" constant="30" id="ta6-RZ-H6V"/>
+                            <constraint firstItem="ghb-fh-Eg5" firstAttribute="trailing" secondItem="1CG-v1-gp1" secondAttribute="trailing" id="v6T-kD-4Zf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1CG-v1-gp1"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LZq-Vh-Sik" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1688.8" y="-64.31784107946028"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gqI-cc-kjv">
+            <objects>
+                <navigationController id="E0L-uK-6eF" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xoL-cw-bOp">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="VCI-I0-llC" kind="relationship" relationship="rootViewController" id="sI2-ds-4yE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0ru-hz-HdT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="45" y="-64"/>
+        </scene>
+    </scenes>
+</document>
